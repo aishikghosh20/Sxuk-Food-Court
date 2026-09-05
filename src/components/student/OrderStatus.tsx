@@ -2,12 +2,13 @@ import { Check } from "lucide-react";
 import { cn } from "../../lib/utils/cn";
 import { ORDER_STATUS_STEPS, type OrderStatus } from "../../types/order";
 
-const labels: Record<(typeof ORDER_STATUS_STEPS)[number], string> = {
-  PLACED: "Placed",
-  ACCEPTED: "Accepted",
+const labels: Record<OrderStatus, string> = {
+  PLACED: "Order Placed",
+  ACCEPTED: "Order Accepted",
   PREPARING: "Preparing",
-  READY: "Ready",
+  READY: "Ready for Collection",
   COLLECTED: "Collected",
+  CANCELLED: "Order Cancelled",
 };
 
 export function OrderStatus({ status }: { status: OrderStatus }) {
